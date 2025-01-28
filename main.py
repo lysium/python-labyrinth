@@ -85,9 +85,8 @@ for row in level:
     x = 1
 
 running = True
+back = pygame.image.load("back.png")
 while running:
-
-    clock.tick(60)
 
     for e in pygame.event.get():
         if e.type == pygame.QUIT:
@@ -112,13 +111,13 @@ while running:
         sys.exit()
 
     # Draw the scene
-    screen.fill((0, 0, 0))
+    screen.blit(back, (0, 0))
     for wall in walls:
-        pygame.draw.ellipse(screen, (0, 128, 64), wall.rect)
+        pygame.draw.ellipse(screen, (255, 128, 64), wall.rect)
     pygame.draw.rect(screen, (255, 0, 0), end_rect)
     pygame.draw.rect(screen, (255, 200, 0), player.rect)
     # gfxdraw.filled_circle(screen, 255, 200, 5, (0,128,128))
     pygame.display.flip()
-    clock.tick(360)
+    clock.tick(120)
 
 pygame.quit()
