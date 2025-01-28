@@ -39,7 +39,6 @@ class Player(object):
 class Wall(object):
 
     def __init__(self, pos):
-        walls.append(self)
         self.rect = pygame.Rect(pos[0], pos[1], 16, 16)
 
 
@@ -77,7 +76,8 @@ x = y = 1
 for row in level:
     for col in row:
         if col == "W":
-            Wall((x, y))
+            wall = Wall((x, y))
+            walls.append(wall)
         if col == "E":
             end_rect = pygame.Rect(x, y, 10, 10)
         x += 18
