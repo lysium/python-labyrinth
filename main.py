@@ -7,6 +7,7 @@ import time
 import pygame
 from pygame import gfxdraw
 
+# based on https://pythonprogramming.altervista.org/simple-labytinth-in-pygame/
 
 class Player(object):
 
